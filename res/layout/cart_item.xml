@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants"
+                android:background="#fff"
+        >
+    <CheckBox
+            android:id="@+id/cart_item_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="checkBoxItem"
+            android:visibility="invisible"
+            />
+    <ImageView
+            android:id="@+id/cart_item_product_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/cart_item_checkBox"
+            />
+
+    <!-- TODO 这个地方需要针对layout—maiginRight进行机型适配 -->
+
+    <TextView
+            android:id="@+id/cart_item_productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称"
+            android:layout_alignTop="@id/cart_item_product_icon"
+            android:layout_toRightOf="@id/cart_item_product_icon"
+            android:maxLines="2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:textColor="#000"
+            />
+    <!-- 数量控制的部分-->
+    <!-- 增加数量-->
+    <ImageView
+            android:id="@+id/cart_item_inc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_new"
+            android:layout_alignRight="@id/cart_item_productName"
+            android:layout_alignBottom="@id/cart_item_product_icon"
+            />
+    <TextView
+            android:id="@+id/cart_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99"
+            android:layout_toLeftOf="@id/cart_item_inc"
+            android:layout_alignBottom="@id/cart_item_product_icon"
+            android:textSize="30sp"
+            android:singleLine="true"
+            android:maxLength="2"
+            android:inputType="number"
+            android:textColor="#666"
+            />
+    <!-- 减少数量-->
+    <ImageView
+            android:id="@+id/cart_item_dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_cut"
+            android:layout_toLeftOf="@id/cart_item_count"
+            android:layout_alignBottom="@id/cart_item_product_icon"
+            />
+
+    <!-- 价格部分 -->
+    <TextView
+            android:id="@+id/cart_item_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_alignRight="@id/cart_item_productName"
+            android:layout_above="@id/cart_item_inc"
+            android:text="价格"
+            android:textColor="#f00"
+            />
+    <!-- 删除部分 -->
+    <ImageView
+            android:id="@+id/cart_item_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_action_remove"
+            android:visibility="invisible"
+            />
+    <!-- 用textView做的删除文字
+    <TextView
+            android:id="@+id/cart_item_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除"
+            android:textColor="#f00"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            />
+            -->
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#eee"
+        >
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            >
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="购物车"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:gravity="center"
+            />
+
+    <Button
+            android:id="@+id/btn_switch_edit_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="btnSwitchEditMode"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="编辑"
+            android:background="#000"
+            android:textColor="#abc"
+            />
+    </RelativeLayout>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        <!-- 最底层 -->
+    <ListView
+            android:id="@+id/cart_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="10dp"
+            android:layout_marginTop="10dp"
+            />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_gravity="bottom"
+                android:background="#a000"
+                >
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全选"
+                    android:onClick="AllChecked"
+                    android:textColor="#bfff"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总金额: "
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#fff"
+                    />
+            <TextView
+                    android:id="@+id/cart_total_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:layout_marginLeft="5dp"
+                    />
+            <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="去结算"
+                    android:onClick="btnPay"
+                    android:background="#f00"
+                    android:textColor="#fff"
+                    />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
+
